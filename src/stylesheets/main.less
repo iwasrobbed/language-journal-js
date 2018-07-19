@@ -1,0 +1,165 @@
+@bottom-toolbar-height: 30px;
+@default-font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+
+// Remove the blue outline on focused textareas et al
+*:focus {
+    outline: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    transition: all 500ms ease-in-out;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#main-container {
+    height: calc(100% - @bottom-toolbar-height);
+}
+
+#left-panel {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: calc(100% - @bottom-toolbar-height);
+    transition: all 500ms ease-in-out;
+}
+
+#right-panel {
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: calc(100% - @bottom-toolbar-height);
+    transition: all 500ms ease-in-out;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+#translated-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    outline: none;
+}
+
+#editor textarea, #translated {
+    @text-h-padding: 15px;
+    width: calc(100% - 2 * @text-h-padding);
+    height: calc(100% - @bottom-toolbar-height);
+    border: 0;
+    padding: 20px @text-h-padding 20px;
+    --x-height-multiplier: 0.35;
+    --baseline-multiplier: 0.179;
+    font-family: @default-font-family;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.58;
+}
+
+#translated p {
+    margin-top: 0px !important;
+    margin-bottom: 28px !important;
+}
+#translated p:last-child {
+    margin-bottom: 10px !important;
+}
+
+#translated p span.sentence:hover {
+    background: rgb(216, 216, 216);
+}
+
+#translated p span.sentence span.word:hover {
+    background: rgb(250, 203, 27);
+    cursor: pointer;
+}
+
+#cover-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: @bottom-toolbar-height;
+    z-index: 1000;
+    background-color: rgb(110, 112, 117);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-app-region: no-drag;
+}
+
+#cover-bottom #cover-bottom-background-left {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+#cover-bottom #cover-bottom-background-right {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 500ms ease-in-out;
+    background-color: rgb(100, 102, 107);
+}
+
+#cover-bottom .button-bottom {
+    display: inline-block;
+    pointer-events: auto;
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+#cover-bottom-left {
+    position: absolute;
+    left: 0;
+    width: calc(50% - 10px);
+    height: 100%;
+    padding-left: 10px;
+}
+
+#cover-bottom-right {
+    position: absolute;
+    right: 0;
+    width: calc(50% - 10px);
+    height: 100%;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#cover-bottom .button-bottom.hover {
+    color: #cecece;
+}
+
+#cover-bottom .button-bottom:active {
+    color: #dcdcdc;
+}
+
+.notransition {
+    transition: none !important;
+}
+
+.biu-instance {
+    -webkit-app-region: no-drag;
+    font-size: 14px;
+    font-family: Roboto, Helvetica, 'Segoe UI', Arial, sans-serif;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scribo</title>
+  <link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="main" class="notransition">
+        <div id="main-container">
+            <div id="left-panel">
+                <div id="editor">
+                    <textarea placeholder="Write your thoughts..."></textarea>
+                </div>
+            </div>
+
+            <div id="right-panel">
+                <div id="translated-wrapper" tabindex="-1">
+                    <div id="translated"></div>
+                </div>
+            </div>
+        </div>
+        <div id="cover-bottom">
+            <div id="cover-bottom-background-left"></div>
+            <div id="cover-bottom-background-right"></div>
+            <div id="cover-bottom-left">
+                <div class="button-bottom l10n-title" id="button-bottom-menu" title="Menu">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div id="cover-bottom-right">
+                <div class="button-bottom l10n-title" id="button-bottom-focus" title="Toggle focus mode">
+                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                </div>
+                <div class="button-bottom l10n-title" id="button-bottom-mode" title="Edit mode">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
